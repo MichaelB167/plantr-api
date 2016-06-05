@@ -1,6 +1,6 @@
 # Plant controller
 class PlantsController < ProtectedController
-  before_action :set_plant, only: [:update, :destroy]
+  before_action :set_plant, only: [:show, :update, :destroy]
 
   # GET /plants
   # GET /plants.json
@@ -19,7 +19,7 @@ class PlantsController < ProtectedController
   # POST /plants
   # POST /plants.json
   def create
-    @plant = current_user.plants.build(plant_params)
+    @plant = current_user.plants.new(plant_params)
 
     if @plant.save
       render json: @plant, status: :created, location: @plant
@@ -48,15 +48,13 @@ class PlantsController < ProtectedController
     head :no_content
   end
 
+  private
+
   def set_plant
     @plant = current_user.plants.find(params[:id])
   end
 
   def plant_params
-    params.require(:plant).permit(:category, :harvest, :name, :quantity,
-                                  :planted_on, :expected_harvest, :care_notes,
-                                  :user, :user_id)
+    params.require(:plant).permit(:category, :harvest, :name, :quantity, :planted_on, :expected_harvest, :care_notes, :user, :user_id)
   end
-
-  private :set_plant, :plant_params
 end
