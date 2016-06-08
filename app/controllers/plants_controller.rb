@@ -55,6 +55,6 @@ class PlantsController < ProtectedController
   end
 
   def plant_params
-    params.require(:plant).permit(:category, :harvest, :name, :quantity, :planted_on, :expected_harvest, :care_notes, :user, :user_id)
+    params.require(:plant).permit(:category, :harvest, :name, :quantity, :planted_on, :expected_harvest, :care_notes, :user, :user_id, :zipcode)
   end
 end
