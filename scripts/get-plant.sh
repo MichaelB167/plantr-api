@@ -1,4 +1,4 @@
-TOKEN='BAhJIiUyZjEyOWRiODQ1YzBhMWYxMmViMGE5ODRjMGI2NmNkZQY6BkVG--2d6c5458e3c7fc403aa320f41559a0446e4f6873'
+TOKEN='BAhJIiU3YWI5N2I2ZTdhNmNhYzc3NTUzMmVhZjczMGY2OWYwYgY6BkVG--3b49082275fae1603eae48b87f56a914f5c8af10'
 curl --include --request GET http://localhost:3000/plants/1 \
   --header "Authorization: Token token=$TOKEN" \
   --header "Content-Type: application/json" \
