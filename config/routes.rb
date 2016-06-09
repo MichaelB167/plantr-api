@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'recipes/index'
   resources :plants, except: [:new, :edit]
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
