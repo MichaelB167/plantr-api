@@ -1,6 +1,6 @@
 # Project Components
 
-Live application: <http://michaelb167.github.io/plantr-front-end/index.html>
+Live application: <http://michaelb167.github.io/plantr-front-end>
 
 Deployed Heroku:
 <https://plantr-api.herokuapp.com/>
