@@ -20,9 +20,52 @@ Entity Relationships Diagram: <http://i.imgur.com/WZYh63M.jpg>
 
 ## Dependencies Installation
 
-1.  HTTParty- `gem install httparty` (I had to manually put it in my gemfile and bundle install to fully load it)
+HTTParty- `gem install httparty` (I had to manually put it in my gemfile and bundle install to fully load it)
 
 ## API
+
+### Plants
+
+| Verb   | URI Pattern | Controller#Action |
+|--------|-------------|-------------------|
+| GET    | '/plants'   | 'plants#index'    |
+| POST   | '/plants'   | 'plants#create'   |
+| PUT    | '/plants'   | 'plants#update'   |
+| DELETE | '/plants'   | 'plants#destroy'  |
+
+Sample curl script for 'plants#update':
+
+```sh
+TOKEN=''
+curl --include --request PATCH
+http://localhost:3000/plants/1 \
+  --header "Authorization: Token token=$TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "plant" : {
+      "category" : "vegetable",
+      "harvest" : "true",
+      "name" : "kale",
+      "quantity" : "5",
+      "planted_on" : "2016-06-05",
+      "expected_harvest" : "2016-07-05",
+      "care_notes" : "spray base with neem oil for aphids"
+    }
+  }'
+```
+
+### Recipes (Using Food2Fork API)
+
+| Verb | URI Pattern | Controller#Action |
+|------|-------------|-------------------|
+| GET  | '/recipes'  | 'recipes#index'   |
+
+Sample curl script for 'recipes#index':
+
+```sh
+curl --include --request GET http://localhost:3000/recipes/index \
+    --header 'Accept: application/json' \
+```
 
 ### Authentication
 
