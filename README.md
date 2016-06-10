@@ -2,6 +2,9 @@
 
 Live application: <http://michaelb167.github.io/plantr-front-end/index.html>
 
+Deployed Heroku:
+<https://plantr-api.herokuapp.com/>
+
 Front end repository: <https://github.com/MichaelB167/plantr-front-end>
 
 ## App Explanation
